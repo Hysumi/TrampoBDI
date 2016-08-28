@@ -13,7 +13,7 @@
       foreach($result as $inv){
         array_push($invocadores, new InvocadorModel($inv["Nickname"], $inv["Invocador_Nivel"]));
       }
-      return $result;
+      return $invocadores;
     }
 
     public function get($id)
