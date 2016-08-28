@@ -19,7 +19,7 @@ abstract class DB{
     private static $port     = "3306";
     private static $user     = "root";
     private static $password = "";
-    private static $db       = "teste";
+    private static $db       = "trampo";
 
     /*Metodos que trazem o conteudo da variavel desejada
     @return   $xxx = conteudo da variavel solicitada*/
