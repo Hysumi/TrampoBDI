@@ -1,7 +1,7 @@
 <?php
 abstract class DB{
     /*Método construtor do banco de dados*/
-    private function __construct(){}
+    public function __construct(){}
 
     /*Evita que a classe seja clonada*/
     private function __clone(){}
@@ -30,7 +30,9 @@ abstract class DB{
     private function getPassword(){return self::$password;}
     private function getDB()      {return self::$db;}
 
-    private function connect(){
+    public $conexao = null;
+
+    public function connect(){
         try
         {
             $this->conexao = new PDO($this->getDBType().":host=".$this->getHost().";port=".$this->getPort().";dbname=".$this->getDB(), $this->getUser(), $this->getPassword());
@@ -44,7 +46,7 @@ abstract class DB{
         return ($this->conexao);
     }
 
-    private function disconnect(){
+    public function disconnect(){
         $this->conexao = null;
     }
 }
