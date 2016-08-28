@@ -1,5 +1,7 @@
 <?php
   require_once "db/Invocador.class.php";
   $Invocador = new Invocador();
-  $Invocador->getAll();
+  echo "Invocadores:<br>";
+  var_dump($Invocador->getAll());
+
 ?>

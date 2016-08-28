@@ -1,7 +1,9 @@
 <?php
 abstract class DB{
     /*Método construtor do banco de dados*/
-    public function __construct(){}
+    public function __construct(){
+      $this->connect();
+    }
 
     /*Evita que a classe seja clonada*/
     private function __clone(){}
