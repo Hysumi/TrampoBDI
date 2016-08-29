@@ -18,14 +18,13 @@
 
     public function get($nome)
     {
-      $sql = 'SELECT Item_Nome, Item_Tipo FROM Item WHERE Item_Nome = ".$nome."';
+      $sql = 'SELECT Item_Nome, Item_Tipo FROM Item WHERE Item_Nome = "'.$nome.'"';
       $query = $this->conexao->query($sql);
       $result = $query->fetch(PDO::FETCH_ASSOC);
-      $items = [];
-      foreach($result as $inv){
-        array_push($items, new ItemModel($inv["Item_Nome"], $inv["Item_Tipo"]));
+      if($result){
+        return (new ItemModel($result["Item_Nome"], $result["Item_Tipo"]));
       }
-      return $items;
+      return null;
     }
 
     public function insert($Invocador)
