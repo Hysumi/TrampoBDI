@@ -6,11 +6,11 @@
   </head>
   <body>
     <?php
-      require_once "db/Monstro.class.php";
-      $monstro = new Monstro();
-      $ms = $monstro->getAll();
-      foreach($ms as $mon){
-	     echo "Nome: {$mon->Monstro_Nome}. Nivel: {$mon->Monstro_Nivel}. Elemento: {$mon->Monstro_Elemento}. Tipo: {$mon->Monstro_Tipo}<br>";
+      require_once "db/Skills.class.php";
+      $skill = new Skills();
+      $sk = $skill->getAll();
+      foreach($sk as $ski){
+	     echo "Nome: {$ski->Skill_Nome}. Elemento: {$ski->Skill_Elemento}. Tempo de Recarga: {$ski->Tempo_de_Recarga}. Dano: {$ski->Dano}<br>";
       }
     ?>
   </body>
