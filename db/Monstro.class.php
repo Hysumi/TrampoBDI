@@ -16,9 +16,16 @@
       return $monstros;
     }
 
-    public function get($id)
+    public function get($nome)
     {
-
+      $sql = 'SELECT Monstro_Nome, Monstro_Nivel, Monstro_Elemento, Monstro_Tipo FROM monstro WHERE Monstro_Nome = ".$nome."';
+      $query = $this->conexao->query($sql);
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+      $monstros = [];
+      foreach($result as $inv){
+        array_push($monstros, new MonstroModel($inv["Monstro_Nome"], $inv["Monstro_Nivel"],$inv["Monstro_Elemento"],$inv["Monstro_Tipo"]));
+      }
+      return $monstros;
     }
 
     public function insert($Invocador)

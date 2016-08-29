@@ -7,22 +7,22 @@
 
   $Invocador = new Invocador();
   echo "Invocadores:<br>";
-  var_dump($Invocador->getAll());
-
+  var_dump($Invocador->get('DK'));
+ /*
   $Item = new Item();
   echo "Items : <br>";
-  var_dump($Item ->getAll());
+  var_dump($Item ->get('Mana Potion'));
 
   $Loja = new Loja();
   echo "Vendedores : <br>";
-  var_dump($Loja ->getAll());
+  var_dump($Loja ->get('BAMBAM'));
 
-  $Monstro = new Monstro();
+  $Monstro = new Monstro('Pikachu');
   echo "Monstros : <br>";
-  var_dump($Monstro ->getAll());
+  var_dump($Monstro ->get());
 
   $Skills = new Skills();
   echo "Habilidades de Monstro : <br>";
-  var_dump($Skills ->getAll());
-
+  var_dump($Skills ->get('ImpactoProfundo'));
+*/
 ?>

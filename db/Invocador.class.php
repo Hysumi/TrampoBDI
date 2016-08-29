@@ -16,9 +16,16 @@
       return $invocadores;
     }
 
-    public function get($id)
+    public function get($nick)
     {
-
+      $sql = 'SELECT Nickname, Invocador_Nivel FROM invocador WHERE Nickname = ".$nick."';
+      $query = $this->conexao->query($sql);
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+      var_dump($result);
+      if($result){
+        return (new InvocadorModel($result["Nickname"], $result["Invocador_Nivel"]));
+      }
+      return null;
     }
 
     public function insert($Invocador)

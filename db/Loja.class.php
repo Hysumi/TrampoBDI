@@ -16,9 +16,16 @@
       return $vendedores;
     }
 
-    public function get($id)
+    public function get($vendedor)
     {
-
+      $sql = 'SELECT Cidade, Vendedor, Loja_Nome FROM loja WHERE Vendedor = ".$vendedor."';
+      $query = $this->conexao->query($sql);
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+      $vendedores = [];
+      foreach($result as $inv){
+        array_push($vendedores, new LojaModel($inv["Cidade"], $inv["Vendedor"], $inv["Loja_Nome"]));
+      }
+      return $vendedores;
     }
 
     public function insert($Invocador)
