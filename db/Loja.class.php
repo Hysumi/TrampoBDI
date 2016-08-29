@@ -27,9 +27,14 @@
       return null;
     }
 
-    public function insert($Invocador)
+    public function insert($loja)
     {
-
+      $sql = 'INSERT INTO Loja (Cidade, Vendedor, Loja_Nome) VALUES (?, ?, ?)';
+      $query = $this->conexao->prepare($sql);
+      $query->execute(array($loja->Cidade, $loja->Vendedor, $loja->Loja_Nome));
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+      var_dump($result);
+      return null;
     }
   }
 ?>

@@ -5,24 +5,30 @@
   require_once "db/Monstro.class.php";
   require_once "db/Skills.class.php";
 
+  $Skills = new Skills();
+  echo "Habilidades de Monstro : <br>";
+  $skill = new SkillModel("BombaDeGas", "Ar", 10,30);
+  var_dump($Skills ->insert($skill));
+/*
   $Invocador = new Invocador();
   echo "Invocadores:<br>";
-  var_dump($Invocador->get('DK'));
+  $inv = new InvocadorModel("Vinho", 14);
+  var_dump($Invocador->insert($inv));
 
   $Item = new Item();
   echo "Items : <br>";
-  var_dump($Item ->get('Mana Potion'));
+  $it = new ItemModel("Havaiana de Pau", "Equipamento");
+  var_dump($Item ->insert($it));
 
   $Loja = new Loja();
   echo "Vendedores : <br>";
-  var_dump($Loja ->get('BAMBAM'));
+  $store = new LojaModel("La Place", "El Cabron", "Elninho");
+  var_dump($Loja ->insert($store));
 
   $Monstro = new Monstro();
   echo "Monstros : <br>";
-  var_dump($Monstro ->get('Pikachu'));
+  $mons = new MonstroModel("Flango", 7, "Ar", "Invocavel");
+  var_dump($Monstro ->insert($mons));
 
-  $Skills = new Skills();
-  echo "Habilidades de Monstro : <br>";
-  var_dump($Skills ->get('ImpactoProfundo'));
-
+*/
 ?>

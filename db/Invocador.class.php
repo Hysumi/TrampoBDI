@@ -27,9 +27,14 @@
       return null;
     }
 
-    public function insert($Invocador)
+    public function insert($invocador)
     {
-
+      $sql = 'INSERT INTO Invocador (Nickname, Invocador_Nivel) VALUES(?, ?)';
+      $query = $this->conexao->prepare($sql);
+      $query->execute(array($invocador->nickname, $invocador->nivel));
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+      var_dump($result);
+      return null;
     }
   }
 ?>

@@ -27,9 +27,14 @@
       return null;
     }
 
-    public function insert($Invocador)
+    public function insert($item)
     {
-
+      $sql = 'INSERT INTO Item (Item_Nome, Item_Tipo) VALUES (?,?)';
+      $query = $this->conexao->prepare($sql);
+      $query->execute(array($item->Item_Nome, $item->Item_Tipo));
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+      var_dump($result);
+      return null;
     }
   }
 ?>

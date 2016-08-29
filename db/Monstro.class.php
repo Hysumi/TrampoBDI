@@ -27,9 +27,14 @@
       return null;
     }
 
-    public function insert($Invocador)
+    public function insert($monstro)
     {
-
+      $sql = 'INSERT INTO Monstro (Monstro_Nome, Monstro_Nivel, Monstro_Elemento, Monstro_Tipo) VALUES (?,?,?,?)';
+      $query = $this->conexao->prepare($sql);
+      $query->execute(array($monstro->Monstro_Nome, $monstro->Monstro_Nivel, $monstro->Monstro_Elemento, $monstro->Monstro_Tipo));
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+      var_dump($result);
+      return null;
     }
   }
 ?>

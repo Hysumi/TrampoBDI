@@ -27,9 +27,14 @@
       return null;
     }
 
-    public function insert($Invocador)
+    public function insert($skill)
     {
-
+      $sql = 'INSERT INTO Skill_Monstro (Skill_Nome, Skill_Elemento, Tempo_de_Recarga, Dano) VALUES (?, ?, ?, ?)';
+      $query = $this->conexao->prepare($sql);
+      $query->execute(array($skill->Skill_Nome, $skill->Skill_Elemento, $skill->Tempo_de_Recarga, $skill->Dano));
+      $result = $query->fetch(PDO::FETCH_ASSOC);
+      var_dump($result);
+      return null;
     }
   }
 ?>
