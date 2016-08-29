@@ -4,12 +4,13 @@
   require_once "db/Loja.class.php";
   require_once "db/Monstro.class.php";
   require_once "db/Skills.class.php";
-
+  
+/*
   $Skills = new Skills();
   echo "Habilidades de Monstro : <br>";
   $skill = new SkillModel("BombaDeGas", "Ar", 10,30);
   var_dump($Skills ->insert($skill));
-/*
+
   $Invocador = new Invocador();
   echo "Invocadores:<br>";
   $inv = new InvocadorModel("Vinho", 14);
