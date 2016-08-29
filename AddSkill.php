@@ -7,21 +7,21 @@
   <body>
 
     <?php
-  	 require_once "db/Monstro.class.php";
-  	 $monstro = new Monstro();
-      if(@$_POST['Monstro_Nome'] != "" && @$_POST['Monstro_Nivel'] != "" && @$_POST['Monstro_Elemento'] != "" && @$_POST['Monstro_Tipo'] != ""){
-        $monstro->insert(new MonstroModel($_POST['Monstro_Nome'], $_POST['Monstro_Nivel'], $_POST['Monstro_Elemento'], $_POST['Monstro_Tipo']));
+  	 require_once "db/Skills.class.php";
+  	 $skill = new Skills();
+      if(@$_POST['Skill_Nome'] != "" && @$_POST['Skill_Elemento'] != "" && @$_POST['Tempo_de_Recarga'] != "" && @$_POST['Dano'] != ""){
+        $skill->insert(new SkillModel($_POST['Skill_Nome'], $_POST['Skill_Elemento'], $_POST['Tempo_de_Recarga'], $_POST['Dano']));
       ?>
     <h1>Operação Executada</h1>
     <?php
   	 }
     ?>
     <form method="post">
-      Adicionando uma Loja: <br><br>
-      Nome do Monstro: <input type="text" name="Monstro_Nome"><br>
-      Nivel:  <input type="number" value="1" name="Monstro_Nivel"><br>
-      Elemento:  <input type="text" name="Monstro_Elemento"><br>
-      Tipo:  <input type="text" name="Monstro_Tipo"><br>
+      Adicionando uma Habilidade: <br><br>
+      Nome da Habilidade: <input type="text" name="Skill_Nome"><br>
+      Elemento: <input type="text" name="Skill_Elemento"><br>
+      Tempo de Recarga:   <input type="number" value="1" name="Tempo_de_Recarga"><br>
+      Dano:  <input type="number" value="1" name="Dano"><br>
 
       <input type="submit">
     </form>

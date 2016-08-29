@@ -17,7 +17,7 @@
   	 }
     ?>
     <form method="post">
-      Adicionando uma Loja: <br><br>
+      Adicionando um Monstro: <br><br>
       Nome do Monstro: <input type="text" name="Monstro_Nome"><br>
       Nivel:  <input type="number" value="1" name="Monstro_Nivel"><br>
       Elemento:  <input type="text" name="Monstro_Elemento"><br>
