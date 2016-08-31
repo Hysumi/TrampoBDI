@@ -5,9 +5,10 @@ class Custom extends DB
 {
   public function customQuery($sql)
   {
-    $q = $this->conexao->query($sql);
-    return $q->fetchAll(PDO::FETCH_ASSOC);
+      $q = $this->conexao->query($sql);
+      if(@$q !=null)
+        return $q->fetch;
+      else return array("Erro de Sintaxe!");
   }
 }
-
 ?>
