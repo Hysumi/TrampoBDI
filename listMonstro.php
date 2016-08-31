@@ -13,5 +13,7 @@
 	     echo "Nome: {$mon->Monstro_Nome}. Nivel: {$mon->Monstro_Nivel}. Elemento: {$mon->Monstro_Elemento}. Tipo: {$mon->Monstro_Tipo}<br>";
       }
     ?>
+    <a href="index.php">Voltar para página inicial.</a><br>
+
   </body>
 </html>

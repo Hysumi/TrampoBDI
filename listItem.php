@@ -13,5 +13,7 @@
 	     echo "Nome: {$it->Item_Nome}. Tipo: {$it->Item_Tipo}<br>";
       }
     ?>
+     <a href="index.php">Voltar para página inicial.</a><br>
+
   </body>
 </html>

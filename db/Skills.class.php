@@ -33,8 +33,14 @@
       $query = $this->conexao->prepare($sql);
       $query->execute(array($skill->Skill_Nome, $skill->Skill_Elemento, $skill->Tempo_de_Recarga, $skill->Dano));
       $result = $query->fetch(PDO::FETCH_ASSOC);
-      var_dump($result);
+      //var_dump($result);
       return null;
+    }
+
+    public function delete($nome)
+    {
+      $sql = 'DELETE FROM skill_monstro WHERE skill_nome = "'.$nome.'"';
+      $query = $this->conexao->query($sql);
     }
   }
 ?>

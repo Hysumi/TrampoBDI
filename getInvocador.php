@@ -5,29 +5,29 @@
     <title></title>
   </head>
   <body>
-
-    <?php
-  	 if(@$_GET['nickname'] != ''){
-    	 require_once "db/Invocador.class.php";
-    	 $invocador = new Invocador();
-       $inv = $invocador->get($_GET['nickname']);
-       if($inv == null){
-    ?>
-        <h1>Sem resultados para: <?php echo $_GET['nickname'];?></h1>
-        <?php
-          }else{
-        ?>
-            Nickname: <?php echo $inv->nickname; ?><br>
-            Nivel: <?php echo $inv->nivel;?><br>
-            <?php
-    	    }
-      }
-            ?>
       <form method="get">
         Buscar um Invocador: <br><br>
         Nickname: <input type="text" name="nickname"><br>
 
-        <input type="submit">
+        <input type="submit"> <br>
+        <a href="index.php">Voltar para página inicial.</a><br>
       </form>
+      <?php
+    	 if(@$_GET['nickname'] != ''){
+      	 require_once "db/Invocador.class.php";
+      	 $invocador = new Invocador();
+         $inv = $invocador->get($_GET['nickname']);
+         if($inv == null){
+      ?>
+          <h5>Sem resultados para: <?php echo $_GET['nickname'];?></h5>
+          <?php
+            }else{
+          ?>
+              Nickname: <?php echo $inv->nickname; ?><br>
+              Nivel: <?php echo $inv->nivel;?><br>
+              <?php
+      	    }
+        }
+        ?>
   </body>
 </html>

@@ -13,5 +13,6 @@
 	     echo "{$inv->nickname}, Nv. {$inv->nivel}<br>";
       }
     ?>
+    <a href="index.php">Voltar para página inicial.</a><br>
   </body>
 </html>

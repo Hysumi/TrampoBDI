@@ -33,8 +33,14 @@
       $query = $this->conexao->prepare($sql);
       $query->execute(array($loja->Cidade, $loja->Vendedor, $loja->Loja_Nome));
       $result = $query->fetch(PDO::FETCH_ASSOC);
-      var_dump($result);
+      //var_dump($result);
       return null;
+    }
+
+    public function delete($vendedor)
+    {
+      $sql = 'DELETE FROM loja WHERE vendedor = "'.$vendedor.'"';
+      $query = $this->conexao->query($sql);
     }
   }
 ?>

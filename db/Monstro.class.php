@@ -33,8 +33,14 @@
       $query = $this->conexao->prepare($sql);
       $query->execute(array($monstro->Monstro_Nome, $monstro->Monstro_Nivel, $monstro->Monstro_Elemento, $monstro->Monstro_Tipo));
       $result = $query->fetch(PDO::FETCH_ASSOC);
-      var_dump($result);
+      //var_dump($result);
       return null;
+    }
+
+    public function delete($nome)
+    {
+      $sql = 'DELETE FROM monstro WHERE monstro_nome = "'.$nome.'"';
+      $query = $this->conexao->query($sql);
     }
   }
 ?>

@@ -33,7 +33,7 @@
       $query = $this->conexao->prepare($sql);
       $query->execute(array($invocador->nickname, $invocador->nivel));
       $result = $query->fetch(PDO::FETCH_ASSOC);
-      var_dump($result);
+      //var_dump($result);
       return null;
     }
 

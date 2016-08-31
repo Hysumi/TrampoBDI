@@ -33,8 +33,14 @@
       $query = $this->conexao->prepare($sql);
       $query->execute(array($item->Item_Nome, $item->Item_Tipo));
       $result = $query->fetch(PDO::FETCH_ASSOC);
-      var_dump($result);
+      //var_dump($result);
       return null;
+    }
+
+    public function delete($nome)
+    {
+      $sql = 'DELETE FROM item WHERE Item_Nome = "'.$nome.'"';
+      $query = $this->conexao->query($sql);
     }
   }
 ?>

@@ -13,5 +13,7 @@
 	     echo "Cidade: {$st->Cidade}. Vendedor: {$st->Vendedor}. Nome da Loja: {$st->Loja_Nome}<br>";
       }
     ?>
+    <a href="index.php">Voltar para página inicial.</a><br>
+
   </body>
 </html>

@@ -13,5 +13,7 @@
 	     echo "Nome: {$ski->Skill_Nome}. Elemento: {$ski->Skill_Elemento}. Tempo de Recarga: {$ski->Tempo_de_Recarga}. Dano: {$ski->Dano}<br>";
       }
     ?>
+    <a href="index.php">Voltar para página inicial.</a><br>
+
   </body>
 </html>
