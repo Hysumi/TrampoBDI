@@ -7,7 +7,7 @@
   <body>
     <?php
   	 if(@$_GET['buscaCustom'] != ''){
-    	 require_once "Custom.class.php";
+    	 require_once "db/Custom.class.php";
     	 $custom = new Custom();
        $rows = $custom->customQuery($_GET['buscaCustom']);
        echo "<h1>Resultados:</h1>";
