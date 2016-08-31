@@ -5,7 +5,8 @@ class Custom extends DB
 {
   public function customQuery($sql)
   {
-    return $this->conexao->query($sql);
+    $q = $this->conexao->query($sql);
+    return $q->fetchAll(PDO::FETCH_ASSOC);
   }
 }
 

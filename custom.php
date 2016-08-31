@@ -9,13 +9,17 @@
   	 if(@$_GET['buscaCustom'] != ''){
     	 require_once "Custom.class.php";
     	 $custom = new Custom();
-       $cust = $custom->customQuery($_GET['buscaCustom']);
-       print_r($cust);
+       $rows = $custom->customQuery($_GET['buscaCustom']);
+       echo "<h1>Resultados:</h1>";
+       foreach($rows as $row){
+         print_r($row);
+         echo "<br>";
+       }
       }
     ?>
 
     <form method="get">
-      Busca Customizada: <br><br>
+      <br>Busca Customizada: <br><br>
       <textarea name="buscaCustom" cols = 60 rows = 20></textarea> <br>
       <input type="submit">
     </form>
