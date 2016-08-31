@@ -12,12 +12,12 @@
       if(@$_POST['nickname'] != "" && @$_POST['nivel']){
         $invocador->insert(new InvocadorModel($_POST['nickname'], $_POST['nivel']));
       ?>
-    <h1>Operação Executada</h1>
+    <h1>Invocador Adicionado</h1>
     <?php
   	 }
     ?>
     <form method="post">
-      Adicionando um Invocador: <br><br>
+      Adicionar um Invocador: <br><br>
       Nickname: <input type="text" name="nickname"><br>
       Nivel: <input type="number" value="1" name="nivel"><br>
 

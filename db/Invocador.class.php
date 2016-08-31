@@ -36,5 +36,11 @@
       var_dump($result);
       return null;
     }
+
+    public function delete($nick)
+    {
+      $sql = 'DELETE FROM invocador WHERE Nickname = "'.$nick.'"';
+      $query = $this->conexao->query($sql);
+    }
   }
 ?>
