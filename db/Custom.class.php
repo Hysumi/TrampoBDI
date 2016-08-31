@@ -7,7 +7,7 @@ class Custom extends DB
   {
       $q = $this->conexao->query($sql);
       if(@$q !=null)
-        return $q->fetch;
+        return $q->fetchAll(PDO::FETCH_ASSOC);
       else return array("Erro de Sintaxe!");
   }
 }
